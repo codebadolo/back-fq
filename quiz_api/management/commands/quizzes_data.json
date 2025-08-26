@@ -1,0 +1,361 @@
+[
+  {
+    "document_nom": "Culture Générale Africaine et Politique",
+    "titre": "Quiz Culture Générale Afrique & Mathématiques",
+    "ordre": 1,
+    "questions": [
+      {
+        "texte": "Quelle est la capitale du Nigeria ?",
+        "reponses": [
+          {"texte": "Abuja", "est_correcte": true},
+          {"texte": "Lagos", "est_correcte": false},
+          {"texte": "Kano", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Qui est considéré comme le père de l'indépendance africaine ?",
+        "reponses": [
+          {"texte": "Kwame Nkrumah", "est_correcte": true},
+          {"texte": "Nelson Mandela", "est_correcte": false},
+          {"texte": "Julius Nyerere", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle langue est la plus parlée en Afrique ?",
+        "reponses": [
+          {"texte": "Arabe", "est_correcte": true},
+          {"texte": "Swahili", "est_correcte": false},
+          {"texte": "Français", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Combien vaut la racine carrée de 144 ?",
+        "reponses": [
+          {"texte": "12", "est_correcte": true},
+          {"texte": "14", "est_correcte": false},
+          {"texte": "10", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle est la formule de l'aire d'un cercle ?",
+        "reponses": [
+          {"texte": "π × r²", "est_correcte": true},
+          {"texte": "2 × π × r", "est_correcte": false},
+          {"texte": "π × d", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quel est le plus grand nombre premier inférieur à 20 ?",
+        "reponses": [
+          {"texte": "19", "est_correcte": true},
+          {"texte": "17", "est_correcte": false},
+          {"texte": "13", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quel pays africain a pour capitale Nairobi ?",
+        "reponses": [
+          {"texte": "Kenya", "est_correcte": true},
+          {"texte": "Ouganda", "est_correcte": false},
+          {"texte": "Tanzanie", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle est la valeur de π approximativement ?",
+        "reponses": [
+          {"texte": "3.14", "est_correcte": true},
+          {"texte": "2.17", "est_correcte": false},
+          {"texte": "3.41", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quel leader africain est connu pour avoir lutté contre l’apartheid ?",
+        "reponses": [
+          {"texte": "Nelson Mandela", "est_correcte": true},
+          {"texte": "Haïlé Sélassié", "est_correcte": false},
+          {"texte": "Patrice Lumumba", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle est la solution de l’équation 2x + 3 = 7 ?",
+        "reponses": [
+          {"texte": "x = 2", "est_correcte": true},
+          {"texte": "x = 5", "est_correcte": false},
+          {"texte": "x = 3", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Laquelle de ces nations n'est pas en Afrique ?",
+        "reponses": [
+          {"texte": "Suriname", "est_correcte": true},
+          {"texte": "Zimbabwe", "est_correcte": false},
+          {"texte": "Gabon", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Comment s’appelle la première femme présidente du Libéria ?",
+        "reponses": [
+          {"texte": "Ellen Johnson Sirleaf", "est_correcte": true},
+          {"texte": "Wangari Maathai", "est_correcte": false},
+          {"texte": "Graça Machel", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Combien font 5 x 7 ?",
+        "reponses": [
+          {"texte": "35", "est_correcte": true},
+          {"texte": "40", "est_correcte": false},
+          {"texte": "30", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle institution africaine est basée à Addis-Abeba ?",
+        "reponses": [
+          {"texte": "Union Africaine", "est_correcte": true},
+          {"texte": "Organisation des Nations Unies", "est_correcte": false},
+          {"texte": "Banque Mondiale", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Résolvez : (x - 3)(x + 2) = 0",
+        "reponses": [
+          {"texte": "x = 3 ou x = -2", "est_correcte": true},
+          {"texte": "x = -3 ou x = 2", "est_correcte": false},
+          {"texte": "x = 5", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle est la monnaie utilisée en Afrique du Sud ?",
+        "reponses": [
+          {"texte": "Rand sud-africain", "est_correcte": true},
+          {"texte": "Naira", "est_correcte": false},
+          {"texte": "Franc CFA", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quel est le résultat de 15 divisé par 3 ?",
+        "reponses": [
+          {"texte": "5", "est_correcte": true},
+          {"texte": "4", "est_correcte": false},
+          {"texte": "6", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Qui est le président actuel de l'Afrique du Sud ?",
+        "reponses": [
+          {"texte": "Cyril Ramaphosa", "est_correcte": true},
+          {"texte": "Jacob Zuma", "est_correcte": false},
+          {"texte": "Thabo Mbeki", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle est la règle pour additionner deux fractions ?",
+        "reponses": [
+          {"texte": "Mettre au même dénominateur, additionner les numérateurs", "est_correcte": true},
+          {"texte": "Multiplier les dénominateurs et numérateurs", "est_correcte": false},
+          {"texte": "Additionner les dénominateurs", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quel fleuve traverse l'Égypte ?",
+        "reponses": [
+          {"texte": "Nil", "est_correcte": true},
+          {"texte": "Niger", "est_correcte": false},
+          {"texte": "Zambèze", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Calculez : 8²",
+        "reponses": [
+          {"texte": "64", "est_correcte": true},
+          {"texte": "16", "est_correcte": false},
+          {"texte": "32", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quel pays africain a été colonisé par la Belgique ?",
+        "reponses": [
+          {"texte": "Congo", "est_correcte": true},
+          {"texte": "Angola", "est_correcte": false},
+          {"texte": "Mozambique", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle est la dérivée de f(x) = x² ?",
+        "reponses": [
+          {"texte": "2x", "est_correcte": true},
+          {"texte": "x", "est_correcte": false},
+          {"texte": "x²", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quel est le plus grand pays d'Afrique par sa superficie ?",
+        "reponses": [
+          {"texte": "Algérie", "est_correcte": true},
+          {"texte": "Soudan", "est_correcte": false},
+          {"texte": "Libye", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Résolvez : 2x + 3 = 7",
+        "reponses": [
+          {"texte": "x = 2", "est_correcte": true},
+          {"texte": "x = 5", "est_correcte": false},
+          {"texte": "x = 3", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle foi célèbre a été fondée en Éthiopie ?",
+        "reponses": [
+          {"texte": "Église orthodoxe éthiopienne", "est_correcte": true},
+          {"texte": "Islam", "est_correcte": false},
+          {"texte": "Bouddhisme", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Intégrez f(x) = 1 avec la borne inférieure 0 et supérieure 5",
+        "reponses": [
+          {"texte": "5", "est_correcte": true},
+          {"texte": "1", "est_correcte": false},
+          {"texte": "0", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quel est le principal exportateur de cacao en Afrique ?",
+        "reponses": [
+          {"texte": "Côte d'Ivoire", "est_correcte": true},
+          {"texte": "Ghana", "est_correcte": false},
+          {"texte": "Nigéria", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Résolvez : x² - 4 = 0",
+        "reponses": [
+          {"texte": "x = 2 ou x = -2", "est_correcte": true},
+          {"texte": "x = 4 ou x = -4", "est_correcte": false},
+          {"texte": "x = 0", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle est la langue officielle du Sénégal ?",
+        "reponses": [
+          {"texte": "Français", "est_correcte": true},
+          {"texte": "Wolof", "est_correcte": false},
+          {"texte": "Anglais", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Calculez : la moyenne de 4, 6, 8",
+        "reponses": [
+          {"texte": "6", "est_correcte": true},
+          {"texte": "5", "est_correcte": false},
+          {"texte": "7", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Qui est le fondateur du Mali Empire ?",
+        "reponses": [
+          {"texte": "Soundiata Keïta", "est_correcte": true},
+          {"texte": "Mansa Musa", "est_correcte": false},
+          {"texte": "Sundiata Touré", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle est la surface d'un carré de côté 5 ?",
+        "reponses": [
+          {"texte": "25", "est_correcte": true},
+          {"texte": "10", "est_correcte": false},
+          {"texte": "20", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quel pays est surnommé le pays des mille collines ?",
+        "reponses": [
+          {"texte": "Rwanda", "est_correcte": true},
+          {"texte": "Burundi", "est_correcte": false},
+          {"texte": "Éthiopie", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Résolvez : 3x = 12",
+        "reponses": [
+          {"texte": "4", "est_correcte": true},
+          {"texte": "3", "est_correcte": false},
+          {"texte": "6", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Comment appelle-t-on un triangle avec trois côtés égaux ?",
+        "reponses": [
+          {"texte": "Triangle équilatéral", "est_correcte": true},
+          {"texte": "Triangle isocèle", "est_correcte": false},
+          {"texte": "Triangle scalène", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quel est l'ancien nom du Zimbabwe ?",
+        "reponses": [
+          {"texte": "Rhodesia", "est_correcte": true},
+          {"texte": "Zaire", "est_correcte": false},
+          {"texte": "Soudan", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle est la formule du périmètre d'un rectangle ?",
+        "reponses": [
+          {"texte": "2 × (longueur + largeur)", "est_correcte": true},
+          {"texte": "longueur × largeur", "est_correcte": false},
+          {"texte": "2 × longueur × largeur", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Qui a fondé la ville de Carthage ?",
+        "reponses": [
+          {"texte": "Les Phéniciens", "est_correcte": true},
+          {"texte": "Les Romains", "est_correcte": false},
+          {"texte": "Les Grecs", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Qu’est-ce que la théorie des ensembles en mathématiques ?",
+        "reponses": [
+          {"texte": "L’étude des collections d’objets", "est_correcte": true},
+          {"texte": "L’étude des nombres premiers", "est_correcte": false},
+          {"texte": "L’étude des fonctions", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle est la capitale de l’Égypte ?",
+        "reponses": [
+          {"texte": "Le Caire", "est_correcte": true},
+          {"texte": "Alexandrie", "est_correcte": false},
+          {"texte": "Gizeh", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle est la racine cubique de 27 ?",
+        "reponses": [
+          {"texte": "3", "est_correcte": true},
+          {"texte": "9", "est_correcte": false},
+          {"texte": "6", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quel est l'ancien nom de l'Afrique du Sud ?",
+        "reponses": [
+          {"texte": "Union Sud-Africaine", "est_correcte": true},
+          {"texte": "Rhodesia", "est_correcte": false},
+          {"texte": "Bechuanaland", "est_correcte": false}
+        ]
+      },
+      {
+        "texte": "Quelle est la surface d’un cercle de rayon 7 ?",
+        "reponses": [
+          {"texte": "153.94", "est_correcte": true},
+          {"texte": "49", "est_correcte": false},
+          {"texte": "43.98", "est_correcte": false}
+        ]
+      }
+    ]
+  }
+]

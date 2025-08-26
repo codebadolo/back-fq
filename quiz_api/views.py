@@ -4,30 +4,46 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Document, Quiz, Question, Reponse
 from .serializers import DocumentSerializer, QuizSerializer, QuestionSerializer, ReponseSerializer
+from rest_framework import viewsets, status
+from .models import Document, Quiz, Question, Reponse
+from .serializers import (
+    DocumentSerializer, QuizSerializer, QuestionSerializer, ReponseSerializer,
 
+)
+import re
+import pdfplumber
+from django.db.models import Count
+from django.utils.timezone import now, timedelta
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.response import Response
+from rest_framework import generics, status, permissions
+from django.contrib.auth import get_user_model, authenticate
+from rest_framework.authtoken.models import Token
+from rest_framework.views import APIView
+from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import viewsets
 from .models import Document, Quiz, Question, Reponse
-from .serializers import DocumentSerializer, QuizSerializer, QuestionSerializer, ReponseSerializer
+from .serializers import DocumentSerializer, QuizSerializer, QuestionSerializer, ReponseSerializer ,DocumentUploadSerializer
 
 from django.db.models import Count
 from django.utils.timezone import now, timedelta
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Quiz, Question, Document
-
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def dashboard_stats(request):
     total_quizzes = Quiz.objects.count()
     total_questions = Question.objects.count()
     total_documents = Document.objects.count()
-    #total_users = User.objects.count()
-
-    # Période : 7 derniers jours
+    
     today = now().date()
     last_week = today - timedelta(days=6)
     date_range = [last_week + timedelta(days=i) for i in range(7)]
 
-    # Stat: nombre de quiz créés chaque jour (courbe d'activité sur 7 jours)
     daily_counts = (
         Quiz.objects.filter(created_at__date__gte=last_week)
         .values('created_at__date')
@@ -41,7 +57,6 @@ def dashboard_stats(request):
         "total_quizzes": total_quizzes,
         "total_questions": total_questions,
         "total_documents": total_documents,
-    #    "total_users": total_users,
         "quizzes_per_day": quizzes_per_day,
     })
 
@@ -49,56 +64,51 @@ def dashboard_stats(request):
 class DocumentViewSet(viewsets.ModelViewSet):
     queryset = Document.objects.all()
     serializer_class = DocumentSerializer
+    permission_classes = [IsAuthenticated]
 
+
+from rest_framework import viewsets, permissions
+from .models import Quiz
+from .serializers import QuizSerializer
 
 class QuizViewSet(viewsets.ModelViewSet):
     queryset = Quiz.objects.all()
     serializer_class = QuizSerializer
+    permission_classes = [permissions.AllowAny]
 
+'''    def perform_create(self, serializer):
+        # Lors de la création, définit created_by et updated_by à l'utilisateur courant
+        serializer.save(created_by=self.request.user, updated_by=self.request.user)
+
+    def perform_update(self, serializer):
+        # Lors de la mise à jour, modifie updated_by avec l'utilisateur courant
+        serializer.save(updated_by=self.request.user)
+'''
 
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
+    permission_classes = [AllowAny  ]
 
 
 class ReponseViewSet(viewsets.ModelViewSet):
     queryset = Reponse.objects.all()
     serializer_class = ReponseSerializer
+    permission_classes = [AllowAny]
 
-# Vous pourrez créer aussi QuizViewSet, QuestionViewSet, ReponseViewSet selon besoins
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status, parsers
-from .models import Document, Quiz, Question, Reponse
-import pdfplumber  # à installer via pip install pdfplumber
-# views.py
-
-# views.py
-from rest_framework.views import APIView
-from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework.response import Response
-from rest_framework import status
-from .serializers import DocumentUploadSerializer
-from .models import Document, Quiz, Question, Reponse
-import pdfplumber
-import re
 
 class DocumentUploadView(APIView):
-    parser_classes = [MultiPartParser, FormParser]  # pour gérer correctement multipart/form-data
+    parser_classes = [MultiPartParser, FormParser]
+    permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
-        # serializer qui accepte uniquement le fichier
         serializer = DocumentUploadSerializer(data=request.data)
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        # Sauvegarde fichier dans Document
         document = serializer.save(nom=serializer.validated_data['fichier'].name)
-
-        # Extraction questions depuis PDF
         questions_data = self.extract_questions_from_pdf(document.fichier.path)
 
-        # Découpage en quiz max 60 questions par quiz
         max_questions = 60
         total_questions = len(questions_data)
         nb_quizzes = (total_questions + max_questions - 1) // max_questions
@@ -110,7 +120,7 @@ class DocumentUploadView(APIView):
 
             quiz = Quiz.objects.create(document=document,
                                        titre=f"Quiz {i + 1} - {document.nom}",
-                                       ordre=i+1)
+                                       ordre=i + 1)
 
             for q in quiz_questions:
                 question = Question.objects.create(quiz=quiz, texte=q['question'])
@@ -130,7 +140,6 @@ class DocumentUploadView(APIView):
                 page_text = page.extract_text()
                 if page_text:
                     text += page_text + "\n"
-        # Regex simplifiée à adapter selon vos PDF
         pattern = re.compile(r'(\d+)\)\s*(.+?)\n([a-d]\).+?\n(?:[a-d]\).+?\n)+)', re.DOTALL)
         matches = pattern.findall(text)
 

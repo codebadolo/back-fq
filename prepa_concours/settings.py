@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
      'rest_framework',
+         'rest_framework.authtoken',
        'drf_yasg',
+    
        'corsheaders',
     'quiz_api',
+          'accounts',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +56,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+AUTH_USER_MODEL = 'accounts.CustomUser'  # Selon votre app
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yourprovider.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'votre_email@example.com'
+EMAIL_HOST_PASSWORD = 'votre_mot_de_passe'
+DEFAULT_FROM_EMAIL = 'noreply@votresite.com'
 
         # settings.py
 CORS_ALLOWED_ORIGINS = [
@@ -131,3 +143,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
