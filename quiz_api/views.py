@@ -33,6 +33,10 @@ from rest_framework.response import Response
 from .models import Quiz, Question, Document
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated 
+from rest_framework import viewsets, permissions
+from .models import Quiz
+from .serializers import QuizSerializer
+
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def dashboard_stats(request):
@@ -67,28 +71,19 @@ class DocumentViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
 
 
-from rest_framework import viewsets, permissions
-from .models import Quiz
-from .serializers import QuizSerializer
+
 
 class QuizViewSet(viewsets.ModelViewSet):
     queryset = Quiz.objects.all()
     serializer_class = QuizSerializer
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
-'''    def perform_create(self, serializer):
-        # Lors de la création, définit created_by et updated_by à l'utilisateur courant
-        serializer.save(created_by=self.request.user, updated_by=self.request.user)
 
-    def perform_update(self, serializer):
-        # Lors de la mise à jour, modifie updated_by avec l'utilisateur courant
-        serializer.save(updated_by=self.request.user)
-'''
 
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
-    permission_classes = [AllowAny  ]
+    permission_classes = [permissions.AllowAny  ]
 
 
 class ReponseViewSet(viewsets.ModelViewSet):
